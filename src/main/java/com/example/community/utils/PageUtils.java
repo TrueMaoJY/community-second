@@ -79,7 +79,13 @@ public class PageUtils implements Serializable {
 	}
 
 	private List<?> list;
-	
+	/**
+	* Description:偏移量 当前是第几条记录
+	*/
+	private long offset;
+	public long getOffset(){
+		return  offset;
+	}
 	/**
 	 * 分页
 	 * @param list        列表数据
@@ -106,6 +112,7 @@ public class PageUtils implements Serializable {
 		this.totalPage = (int)page.getPages();
 		this.from=getFrom();
 		this.to=getTo();
+		this.offset=page.offset();
 	}
 
 	public int getTotal() {

@@ -17,5 +17,9 @@ import java.util.Map;
 public interface LoginTicketService extends IService<LoginTicketEntity> {
 
     PageUtils queryPage(Map<String, Object> params);
+
+    int insert(LoginTicketEntity entity);
+
+    LoginTicketEntity findUserByTicket(String ticket);
 }
 

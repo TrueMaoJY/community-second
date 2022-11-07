@@ -27,4 +27,14 @@ public class LoginTicketServiceImpl extends ServiceImpl<LoginTicketDao, LoginTic
         return new PageUtils(page);
     }
 
+    @Override
+    public int insert(LoginTicketEntity entity) {
+        return  baseMapper.insert(entity);
+    }
+
+    @Override
+    public LoginTicketEntity findUserByTicket(String ticket) {
+        return  baseMapper.selectOne(new QueryWrapper<LoginTicketEntity>().eq("ticket",ticket));
+    }
+
 }

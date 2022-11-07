@@ -27,6 +27,12 @@ public class HomeController {
     private DiscussPostService discussPostService;
     @Autowired
     private UserService userService;
+    /**
+    * Description:访问首页
+    * date: 2022/10/24 21:54
+    * @author: MaoJY
+    * @since JDK 1.8
+    */
     @RequestMapping({"/index","/"})
     public String queryIndex(Model model, Page page){
         PageUtils pageUtils = discussPostService.queryIndex(0, (int) page.getCurrent(), (int) page.getSize());

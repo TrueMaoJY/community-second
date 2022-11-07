@@ -1,5 +1,6 @@
 package com.example.community.service;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 import com.example.community.entity.CommentEntity;
@@ -17,5 +18,10 @@ import java.util.Map;
 public interface CommentService extends IService<CommentEntity> {
 
     PageUtils queryPage(Map<String, Object> params);
+
+
+    PageUtils findCommentsByEntity(int entityTypePost, Integer id, long current, long size);
+
+    int findCommentCount(int entityTypeComment, Integer id);
 }
 
